@@ -6,7 +6,7 @@ ${MESSAGE}       Hello, world!
 ${LOGIN URL}     http://automationpractice.com
 ${BROWSER}       headlesschrome
 # ${BROWSER}       Chrome	
-
+# TEST
 *** Keywords ***
 
 Choose Summer Dress
