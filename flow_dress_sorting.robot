@@ -1,7 +1,8 @@
 *** Settings ***
 Documentation    Example using the space separated plain text format.
-Library           SeleniumLibrary
-Resource    ./pages/welcome.robot
+# Library           SeleniumLibrary
+Resource    ./pages/welcome.robot 
+Resource    ./pages/catalog.robot
 
 *** Variables ***
 ${MESSAGE}       Hello, world!
@@ -30,10 +31,12 @@ Open Browser To First Page
 Go To Dress   
     # Click Element  xpath: //*[@id="block_top_menu"]/ul/li[2]/a
     welcome.Choose menu Dress
-    Wait Until Page Contains Element  xpath: //*[@id="subcategories"]/ul/li[3]/div[1]/a
+    # Wait Until Page Contains Element  xpath: //*[@id="subcategories"]/ul/li[3]/div[1]/a
 Go To Summer Dress
-    Click Element  xpath: //*[@id="subcategories"]/ul/li[3]/div[1]/a
+    # Click Element  xpath: //*[@id="subcategories"]/ul/li[3]/div[1]/a
+    catalog.Choose Summer Dress
 Sort Dress By Price
+    catalog.Sort By High Price
     # Click Element  xpath: //*[@id="selectProductSort"]/option[2]
-    Select From List By Value
-    ...  id: selectProductSort  price:desc
+    # Select From List By Value
+    # ...  id: selectProductSort  price:desc
