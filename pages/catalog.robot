@@ -15,5 +15,3 @@ Choose Summer Dress
 Sort By High Price
     Select From List By Value
     ...  id: selectProductSort  price:desc
-
-    
