@@ -1,0 +1,6 @@
+datasources:fcbe0c743f173616243f76362f20888dd7b858f4
+commandlineoptions:363b57aa22b42f986ee23ade89a7a573fe62e1eb
+suitesfrom:no-suites-from-option
+file:f1df20ff8cbb5b70728f8a6dd04df8f5c1d07cfb
+--test Flow Dress Sorting.Go to Summer Dress
+--test Flow Dress Sorting.Sort product by price

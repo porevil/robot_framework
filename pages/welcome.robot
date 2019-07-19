@@ -8,6 +8,8 @@ ${BROWSER}       headlesschrome
 # ${BROWSER}       Chrome	
 
 *** Keywords ***
+Home 
+    Go To  ${LOGIN URL}
 Open Browser To First Page
     Open Browser    ${LOGIN URL}    ${BROWSER}
 
