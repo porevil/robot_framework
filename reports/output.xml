@@ -1,153 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20190719 09:59:21.202" generator="Rebot 3.1.2 (Python 2.7.10 on darwin)">
+<robot rpa="false" generated="20190719 16:11:46.608" generator="Robot 3.1.2 (Python 2.7.10 on darwin)">
 <suite source="/Users/admin/Workspace/RobotTraining/flow_dress_sorting.robot" id="s1" name="Flow Dress Sorting">
-<test id="s1-t1" name="Go to Summer Dress">
-<kw name="Open Browser To First Page">
+<kw type="setup" name="Open Browser To First Page">
 <kw name="Open Browser To First Page" library="welcome">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
 <arguments>
 <arg>${LOGIN URL}</arg>
-<arg>${BROWSER}</arg>
+<arg>browser=${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=browserName:chrome</arg>
 </arguments>
-<msg timestamp="20190719 09:58:52.740" level="INFO">Opening browser 'headlesschrome' to base url 'http://automationpractice.com'.</msg>
-<status status="PASS" endtime="20190719 09:59:05.937" starttime="20190719 09:58:52.740"></status>
+<msg timestamp="20190719 16:11:46.759" level="INFO">Opening browser 'Chrome' to base url 'http://automationpractice.com' through remote server at 'http://192.168.43.204:4444/wd/hub'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190719 16:11:48.294" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" endtime="20190719 16:11:48.294" starttime="20190719 16:11:48.293"></status>
 </kw>
-<status status="PASS" endtime="20190719 09:59:05.937" starttime="20190719 09:58:52.739"></status>
+<msg timestamp="20190719 16:11:48.296" level="FAIL">WebDriverException: Message: Host header or origin header is specified and is not localhost.
+</msg>
+<status status="FAIL" endtime="20190719 16:11:48.296" starttime="20190719 16:11:46.759"></status>
 </kw>
-<status status="PASS" endtime="20190719 09:59:05.938" starttime="20190719 09:58:52.739"></status>
+<status status="FAIL" endtime="20190719 16:11:48.297" starttime="20190719 16:11:46.759"></status>
 </kw>
-<kw name="Go To Dress">
-<kw name="Choose menu Dress" library="welcome">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath: //*[@id="block_top_menu"]/ul/li[2]/a</arg>
-</arguments>
-<msg timestamp="20190719 09:59:05.939" level="INFO">Clicking element 'xpath: //*[@id="block_top_menu"]/ul/li[2]/a'.</msg>
-<status status="PASS" endtime="20190719 09:59:11.384" starttime="20190719 09:59:05.939"></status>
+<status status="FAIL" endtime="20190719 16:11:48.297" starttime="20190719 16:11:46.758"></status>
 </kw>
-<status status="PASS" endtime="20190719 09:59:11.385" starttime="20190719 09:59:05.938"></status>
-</kw>
-<status status="PASS" endtime="20190719 09:59:11.385" starttime="20190719 09:59:05.938"></status>
-</kw>
-<kw name="Go To Summer Dress">
-<kw name="Choose Summer Dress" library="catalog">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath: //*[@id="subcategories"]/ul/li[3]/div[1]/a</arg>
-</arguments>
-<msg timestamp="20190719 09:59:11.386" level="INFO">Clicking element 'xpath: //*[@id="subcategories"]/ul/li[3]/div[1]/a'.</msg>
-<status status="PASS" endtime="20190719 09:59:15.895" starttime="20190719 09:59:11.386"></status>
-</kw>
-<status status="PASS" endtime="20190719 09:59:15.895" starttime="20190719 09:59:11.385"></status>
-</kw>
-<status status="PASS" endtime="20190719 09:59:15.895" starttime="20190719 09:59:11.385"></status>
-</kw>
-<kw name="Sort Dress By Price">
-<kw name="Sort By High Price" library="catalog">
-<kw name="Select From List By Value" library="SeleniumLibrary">
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<arguments>
-<arg>id: selectProductSort</arg>
-<arg>price:desc</arg>
-</arguments>
-<msg timestamp="20190719 09:59:15.896" level="INFO">Selecting options from selection list 'id: selectProductSort' by value price:desc.</msg>
-<status status="PASS" endtime="20190719 09:59:15.967" starttime="20190719 09:59:15.896"></status>
-</kw>
-<status status="PASS" endtime="20190719 09:59:15.967" starttime="20190719 09:59:15.896"></status>
-</kw>
-<status status="PASS" endtime="20190719 09:59:15.967" starttime="20190719 09:59:15.895"></status>
-</kw>
+<test id="s1-t1" name="Go to Summer Dress">
 <tags>
 <tag>done</tag>
 <tag>sprint1</tag>
 </tags>
-<status status="PASS" endtime="20190719 09:59:15.968" critical="yes" starttime="20190719 09:58:52.738"></status>
+<status status="FAIL" endtime="20190719 16:11:48.299" critical="yes" starttime="20190719 16:11:48.298">Parent suite setup failed:
+WebDriverException: Message: Host header or origin header is specified and is not localhost.
+</status>
 </test>
 <test id="s1-t2" name="Sort product by price">
-<kw name="Open Browser To First Page">
-<kw name="Open Browser To First Page" library="welcome">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the given ``url``.</doc>
-<arguments>
-<arg>${LOGIN URL}</arg>
-<arg>${BROWSER}</arg>
-</arguments>
-<msg timestamp="20190719 09:58:52.740" level="INFO">Opening browser 'headlesschrome' to base url 'http://automationpractice.com'.</msg>
-<status status="PASS" endtime="20190719 09:59:06.199" starttime="20190719 09:58:52.740"></status>
-</kw>
-<status status="PASS" endtime="20190719 09:59:06.199" starttime="20190719 09:58:52.739"></status>
-</kw>
-<status status="PASS" endtime="20190719 09:59:06.199" starttime="20190719 09:58:52.739"></status>
-</kw>
-<kw name="Go To Dress">
-<kw name="Choose menu Dress" library="welcome">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath: //*[@id="block_top_menu"]/ul/li[2]/a</arg>
-</arguments>
-<msg timestamp="20190719 09:59:06.200" level="INFO">Clicking element 'xpath: //*[@id="block_top_menu"]/ul/li[2]/a'.</msg>
-<status status="PASS" endtime="20190719 09:59:13.054" starttime="20190719 09:59:06.200"></status>
-</kw>
-<status status="PASS" endtime="20190719 09:59:13.055" starttime="20190719 09:59:06.200"></status>
-</kw>
-<status status="PASS" endtime="20190719 09:59:13.055" starttime="20190719 09:59:06.199"></status>
-</kw>
-<kw name="Go To Summer Dress">
-<kw name="Choose Summer Dress" library="catalog">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath: //*[@id="subcategories"]/ul/li[3]/div[1]/a</arg>
-</arguments>
-<msg timestamp="20190719 09:59:13.056" level="INFO">Clicking element 'xpath: //*[@id="subcategories"]/ul/li[3]/div[1]/a'.</msg>
-<status status="PASS" endtime="20190719 09:59:20.800" starttime="20190719 09:59:13.056"></status>
-</kw>
-<status status="PASS" endtime="20190719 09:59:20.800" starttime="20190719 09:59:13.055"></status>
-</kw>
-<status status="PASS" endtime="20190719 09:59:20.801" starttime="20190719 09:59:13.055"></status>
-</kw>
-<kw name="Sort Dress By Price">
-<kw name="Sort By High Price" library="catalog">
-<kw name="Select From List By Value" library="SeleniumLibrary">
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<arguments>
-<arg>id: selectProductSort</arg>
-<arg>price:desc</arg>
-</arguments>
-<msg timestamp="20190719 09:59:20.801" level="INFO">Selecting options from selection list 'id: selectProductSort' by value price:desc.</msg>
-<status status="PASS" endtime="20190719 09:59:20.871" starttime="20190719 09:59:20.801"></status>
-</kw>
-<status status="PASS" endtime="20190719 09:59:20.871" starttime="20190719 09:59:20.801"></status>
-</kw>
-<status status="PASS" endtime="20190719 09:59:20.871" starttime="20190719 09:59:20.801"></status>
-</kw>
 <tags>
 <tag>progress</tag>
 </tags>
-<status status="PASS" endtime="20190719 09:59:20.872" critical="yes" starttime="20190719 09:58:52.738"></status>
+<status status="FAIL" endtime="20190719 16:11:48.300" critical="yes" starttime="20190719 16:11:48.299">Parent suite setup failed:
+WebDriverException: Message: Host header or origin header is specified and is not localhost.
+</status>
 </test>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20190719 16:11:48.301" starttime="20190719 16:11:48.301"></status>
+</kw>
 <doc>Example using the space separated plain text format.</doc>
 <metadata>
-<item name="Randomized">Suites and tests (seed 554663076656195804)</item>
+<item name="Randomized">Suites and tests (seed 4527500915264836433)</item>
 </metadata>
-<status status="PASS" endtime="20190719 09:59:20.875" starttime="20190719 09:58:52.477"></status>
+<status status="FAIL" endtime="20190719 16:11:48.301" starttime="20190719 16:11:46.609">Suite setup failed:
+WebDriverException: Message: Host header or origin header is specified and is not localhost.
+</status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="2">Critical Tests</stat>
-<stat fail="0" pass="2">All Tests</stat>
+<stat fail="2" pass="0">Critical Tests</stat>
+<stat fail="2" pass="0">All Tests</stat>
 </total>
 <tag>
-<stat fail="0" pass="1">done</stat>
-<stat fail="0" pass="1">progress</stat>
-<stat fail="0" pass="1">sprint1</stat>
+<stat fail="1" pass="0">done</stat>
+<stat fail="1" pass="0">progress</stat>
+<stat fail="1" pass="0">sprint1</stat>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Flow Dress Sorting" pass="2">Flow Dress Sorting</stat>
+<stat fail="2" id="s1" name="Flow Dress Sorting" pass="0">Flow Dress Sorting</stat>
 </suite>
 </statistics>
 <errors>

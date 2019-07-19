@@ -1,88 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20190719 13:40:02.942" generator="Robot 3.1.2 (Python 2.7.10 on darwin)">
-<suite source="/Users/admin/Workspace/RobotTraining/api_test.robot" id="s1" name="Api Test">
-<test id="s1-t1" name="Call list of users from jsonplaceholder">
-<kw name="Create Session" library="RequestsLibrary">
-<doc>Create Session: create a HTTP session to a server</doc>
+<robot rpa="false" generated="20190719 16:12:47.604" generator="Robot 3.1.2 (Python 2.7.10 on darwin)">
+<suite source="/Users/admin/Workspace/RobotTraining/flow_dress_sorting.robot" id="s1" name="Flow Dress Sorting">
+<kw type="setup" name="Open Browser To First Page">
+<kw name="Open Browser To First Page" library="welcome">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
 <arguments>
-<arg>api</arg>
-<arg>https://jsonplaceholder.typicode.com</arg>
+<arg>${LOGIN URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>desired_capabilities=browserName:chrome</arg>
 </arguments>
-<msg timestamp="20190719 13:40:03.061" level="INFO">Creating Session using : alias=api, url=https://jsonplaceholder.typicode.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" endtime="20190719 13:40:03.062" starttime="20190719 13:40:03.061"></status>
+<msg timestamp="20190719 16:12:47.896" level="INFO">Opening browser 'Chrome' to base url 'http://automationpractice.com' through remote server at 'http://localhost:4444/wd/hub'.</msg>
+<status status="PASS" endtime="20190719 16:13:07.443" starttime="20190719 16:12:47.895"></status>
 </kw>
-<kw name="Get Request" library="RequestsLibrary">
-<doc>Send a GET request on the session object found using the
-given `alias`</doc>
+<status status="PASS" endtime="20190719 16:13:07.444" starttime="20190719 16:12:47.895"></status>
+</kw>
+<status status="PASS" endtime="20190719 16:13:07.444" starttime="20190719 16:12:47.895"></status>
+</kw>
+<test id="s1-t1" name="Go to Summer Dress">
+<kw name="Go To Dress">
+<kw name="Choose menu Dress" library="welcome">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
 <arguments>
-<arg>api</arg>
-<arg>/users</arg>
+<arg>xpath: //*[@id="block_top_menu"]/ul/li[2]/a</arg>
 </arguments>
-<assign>
-<var>${response}</var>
-</assign>
-<msg timestamp="20190719 13:40:03.470" level="INFO">Get Request using : alias=api, uri=/users, headers=None json=None</msg>
-<msg timestamp="20190719 13:40:03.471" level="INFO">/Library/Python/2.7/site-packages/urllib3/connectionpool.py:851: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
-  InsecureRequestWarning)</msg>
-<msg timestamp="20190719 13:40:03.471" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20190719 13:40:03.471" starttime="20190719 13:40:03.062"></status>
+<msg timestamp="20190719 16:13:07.446" level="INFO">Clicking element 'xpath: //*[@id="block_top_menu"]/ul/li[2]/a'.</msg>
+<status status="PASS" endtime="20190719 16:13:16.109" starttime="20190719 16:13:07.445"></status>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<doc>Logs the given message to the console.</doc>
+<status status="PASS" endtime="20190719 16:13:16.109" starttime="20190719 16:13:07.445"></status>
+</kw>
+<status status="PASS" endtime="20190719 16:13:16.109" starttime="20190719 16:13:07.445"></status>
+</kw>
+<kw name="Go To Summer Dress">
+<kw name="Choose Summer Dress" library="catalog">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
 <arguments>
-<arg>${response}</arg>
+<arg>xpath: //*[@id="subcategories"]/ul/li[3]/div[1]/a</arg>
 </arguments>
-<status status="PASS" endtime="20190719 13:40:03.472" starttime="20190719 13:40:03.471"></status>
+<msg timestamp="20190719 16:13:16.112" level="INFO">Clicking element 'xpath: //*[@id="subcategories"]/ul/li[3]/div[1]/a'.</msg>
+<status status="PASS" endtime="20190719 16:13:29.541" starttime="20190719 16:13:16.112"></status>
 </kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" endtime="20190719 16:13:29.541" starttime="20190719 16:13:16.110"></status>
+</kw>
+<status status="PASS" endtime="20190719 16:13:29.541" starttime="20190719 16:13:16.110"></status>
+</kw>
+<kw name="Sort Dress By Price">
+<kw name="Sort By High Price" library="catalog">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
 <arguments>
-<arg>${200}</arg>
-<arg>${response.status_code}</arg>
+<arg>id: selectProductSort</arg>
+<arg>price:desc</arg>
 </arguments>
-<status status="PASS" endtime="20190719 13:40:03.473" starttime="20190719 13:40:03.472"></status>
+<msg timestamp="20190719 16:13:29.543" level="INFO">Selecting options from selection list 'id: selectProductSort' by value price:desc.</msg>
+<status status="PASS" endtime="20190719 16:13:29.667" starttime="20190719 16:13:29.542"></status>
 </kw>
-<kw name="Get Length" library="BuiltIn">
-<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" endtime="20190719 16:13:29.667" starttime="20190719 16:13:29.542"></status>
+</kw>
+<status status="PASS" endtime="20190719 16:13:29.667" starttime="20190719 16:13:29.541"></status>
+</kw>
+<kw type="teardown" name="Home" library="welcome">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
 <arguments>
-<arg>${response.json()}</arg>
+<arg>${LOGIN URL}</arg>
 </arguments>
-<assign>
-<var>${len}</var>
-</assign>
-<msg timestamp="20190719 13:40:03.474" level="INFO">Length is 10</msg>
-<msg timestamp="20190719 13:40:03.474" level="INFO">${len} = 10</msg>
-<status status="PASS" endtime="20190719 13:40:03.474" starttime="20190719 13:40:03.473"></status>
+<msg timestamp="20190719 16:13:29.668" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" endtime="20190719 16:13:35.300" starttime="20190719 16:13:29.668"></status>
 </kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<doc>Fails if the given objects are unequal.</doc>
-<arguments>
-<arg>${10}</arg>
-<arg>${len}</arg>
-</arguments>
-<status status="PASS" endtime="20190719 13:40:03.475" starttime="20190719 13:40:03.474"></status>
+<status status="PASS" endtime="20190719 16:13:35.301" starttime="20190719 16:13:29.667"></status>
 </kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<doc>Fails if the given objects are unequal.</doc>
-<arguments>
-<arg>Bret</arg>
-<arg>${response.json()[0]["username"]}</arg>
-</arguments>
-<status status="PASS" endtime="20190719 13:40:03.476" starttime="20190719 13:40:03.475"></status>
-</kw>
-<status status="PASS" endtime="20190719 13:40:03.476" critical="yes" starttime="20190719 13:40:03.061"></status>
+<tags>
+<tag>done</tag>
+<tag>sprint1</tag>
+</tags>
+<status status="PASS" endtime="20190719 16:13:35.301" critical="yes" starttime="20190719 16:13:07.444"></status>
 </test>
-<status status="PASS" endtime="20190719 13:40:03.477" starttime="20190719 13:40:02.945"></status>
+<test id="s1-t2" name="Sort product by price">
+<kw name="Go To Dress">
+<kw name="Choose menu Dress" library="welcome">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath: //*[@id="block_top_menu"]/ul/li[2]/a</arg>
+</arguments>
+<msg timestamp="20190719 16:13:35.303" level="INFO">Clicking element 'xpath: //*[@id="block_top_menu"]/ul/li[2]/a'.</msg>
+<status status="PASS" endtime="20190719 16:13:40.948" starttime="20190719 16:13:35.303"></status>
+</kw>
+<status status="PASS" endtime="20190719 16:13:40.948" starttime="20190719 16:13:35.302"></status>
+</kw>
+<status status="PASS" endtime="20190719 16:13:40.949" starttime="20190719 16:13:35.302"></status>
+</kw>
+<kw name="Go To Summer Dress">
+<kw name="Choose Summer Dress" library="catalog">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath: //*[@id="subcategories"]/ul/li[3]/div[1]/a</arg>
+</arguments>
+<msg timestamp="20190719 16:13:40.950" level="INFO">Clicking element 'xpath: //*[@id="subcategories"]/ul/li[3]/div[1]/a'.</msg>
+<status status="PASS" endtime="20190719 16:13:44.840" starttime="20190719 16:13:40.949"></status>
+</kw>
+<status status="PASS" endtime="20190719 16:13:44.840" starttime="20190719 16:13:40.949"></status>
+</kw>
+<status status="PASS" endtime="20190719 16:13:44.841" starttime="20190719 16:13:40.949"></status>
+</kw>
+<kw name="Sort Dress By Price">
+<kw name="Sort By High Price" library="catalog">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>id: selectProductSort</arg>
+<arg>price:desc</arg>
+</arguments>
+<msg timestamp="20190719 16:13:44.842" level="INFO">Selecting options from selection list 'id: selectProductSort' by value price:desc.</msg>
+<status status="PASS" endtime="20190719 16:13:44.962" starttime="20190719 16:13:44.842"></status>
+</kw>
+<status status="PASS" endtime="20190719 16:13:44.962" starttime="20190719 16:13:44.842"></status>
+</kw>
+<status status="PASS" endtime="20190719 16:13:44.963" starttime="20190719 16:13:44.841"></status>
+</kw>
+<kw type="teardown" name="Home" library="welcome">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20190719 16:13:44.964" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" endtime="20190719 16:13:53.127" starttime="20190719 16:13:44.964"></status>
+</kw>
+<status status="PASS" endtime="20190719 16:13:53.127" starttime="20190719 16:13:44.963"></status>
+</kw>
+<tags>
+<tag>progress</tag>
+</tags>
+<status status="PASS" endtime="20190719 16:13:53.127" critical="yes" starttime="20190719 16:13:35.301"></status>
+</test>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20190719 16:13:53.191" starttime="20190719 16:13:53.128"></status>
+</kw>
+<doc>Example using the space separated plain text format.</doc>
+<status status="PASS" endtime="20190719 16:13:53.191" starttime="20190719 16:12:47.607"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
 </total>
 <tag>
+<stat fail="0" pass="1">done</stat>
+<stat fail="0" pass="1">progress</stat>
+<stat fail="0" pass="1">sprint1</stat>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Api Test" pass="1">Api Test</stat>
+<stat fail="0" id="s1" name="Flow Dress Sorting" pass="2">Flow Dress Sorting</stat>
 </suite>
 </statistics>
 <errors>

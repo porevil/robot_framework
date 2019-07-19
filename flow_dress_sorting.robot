@@ -10,8 +10,8 @@ Test Teardown   welcome.Home
 *** Variables ***
 ${MESSAGE}       Hello, world!
 ${LOGIN URL}     http://automationpractice.com
-# ${BROWSER}       headlesschrome
-${BROWSER}       Chrome	
+${BROWSER}       headlesschrome
+# ${BROWSER}       Chrome	
 
 *** Test Cases ***
 Go to Summer Dress

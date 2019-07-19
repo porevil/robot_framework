@@ -1,0 +1,10 @@
+{
+  "capabilities":
+  [
+    {
+      "browserName": "chrome",
+      "maxInstances": 10,
+      "seleniumProtocol": "WebDriver"
+    }
+  ]
+}
